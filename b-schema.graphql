@@ -1,0 +1,14 @@
+extend schema @link(url: "https://specs.apollo.dev/federation/v2.7", import: ["@key", "@interfaceObject"])
+
+type Media @key(fields: "id", resolvable: false) @interfaceObject {
+  id: ID!
+}
+
+type Movie @key(fields: "id") {
+  id: ID!
+  imdbScore: Int!
+}
+
+type Query {
+  numberOneMedia: Media!
+}
